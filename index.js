@@ -19,14 +19,18 @@ const provider = 'https://matic-mainnet.chainstacklabs.com';
 const web3Provider = new Web3.providers.HttpProvider(provider);
 const web3 = new Web3(web3Provider);
 
-const data = web3.eth
-  .getTransaction(
-    '0x2b1cb0ee5c14b33d1871a671c235dce2972861a1ad1410659251f0b9d7fac39f'
-  )
-  .then(console.log);
+// const data = web3.eth
+//   .getTransaction(
+//     '0x2b1cb0ee5c14b33d1871a671c235dce2972861a1ad1410659251f0b9d7fac39f'
+//   )
+//   .then(console.log);
 // console.log(data);
 const dt = async function () {
   try {
+    const data =await web3.eth
+  .getTransaction(
+    '0x2b1cb0ee5c14b33d1871a671c235dce2972861a1ad1410659251f0b9d7fac39f'
+  )
     const transact = await new transactionModel({
       blockHash: data.blockHash,
       blockNumber: data.blockNumber,
