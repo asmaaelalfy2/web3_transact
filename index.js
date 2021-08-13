@@ -31,25 +31,9 @@ const dt = async function () {
   .getTransaction(
     '0x2b1cb0ee5c14b33d1871a671c235dce2972861a1ad1410659251f0b9d7fac39f'
   )
-    const transact = await new transactionModel({
-      blockHash: data.blockHash,
-      blockNumber: data.blockNumber,
-      from: data.from,
-      gas: data.gas,
-      gasPrice: data.gasPrice,
-      hash: data.hash,
-      input: data.input,
-      nonce: data.nonce,
-      to: data.to,
-      transactionIndex: data.transactionIndex,
-      value: data.value,
-      type: data.type,
-      v: data.v,
-      r: data.r,
-      s: data.s,
-    });
+    const transact = await new transactionModel(data);
     console.log(transact);
-    await transact.save();
+     transact.save();
   } catch (error) {
     console.log(error);
   }
